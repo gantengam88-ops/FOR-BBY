@@ -1,4 +1,42 @@
-style.css
-script.js
-music.mp3
-img
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🎂 Happy Birthday Sayang ❤️</h1>
+
+    <p class="subtitle">
+        Ada sesuatu yang spesial buat kamu...
+    </p>
+
+    <button id="openBtn">
+        💌 Buka Surat
+    </button>
+
+    <div id="letter" style="display:none;">
+
+        <h2>Untuk Kamu ❤️</h2>
+
+        <p id="typing"></p>
+
+        <img src="img/1.jpg" class="photo">
+
+    </div>
+
+</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
