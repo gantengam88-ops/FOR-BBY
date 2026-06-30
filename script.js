@@ -1,32 +1,41 @@
-const btn = document.getElementById("openBtn");
-const letter = document.getElementById("letter");
+const openBtn = document.getElementById("openBtn");
+const letterPage = document.getElementById("letterPage");
 const typing = document.getElementById("typing");
 const music = document.getElementById("music");
+const card = document.querySelector(".card");
 
-const text = `Selamat ulang tahun, sayang ❤️
+const message = `Happy Birthday Sayang ❤️
 
-Semoga semua impianmu tercapai.
+Semoga di umur yang baru ini kamu selalu sehat, bahagia, dan semua impianmu tercapai.
 
-Terima kasih sudah hadir di hidupku.
+Terima kasih sudah menjadi orang yang selalu membuat hariku lebih berwarna.
 
-Aku akan selalu ada untukmu.
+Aku bersyukur bisa mengenalmu, tertawa bersamamu, dan membuat kenangan indah denganmu.
 
-I Love You ❤️`;
+Semoga kita bisa terus bersama melewati banyak ulang tahun berikutnya.
 
-btn.onclick = function () {
-    letter.style.display = "block";
-    music.play();
+I Love You More Than Yesterday ❤️`;
 
-    let i = 0;
+openBtn.addEventListener("click", () => {
+
+    card.style.display = "none";
+    letterPage.style.display = "flex";
+
+    music.play().catch(() => {
+        console.log("Musik menunggu interaksi browser.");
+    });
+
     typing.innerHTML = "";
 
-    function type() {
-        if (i < text.length) {
-            typing.innerHTML += text.charAt(i);
+    let i = 0;
+
+    function typeWriter() {
+        if (i < message.length) {
+            typing.innerHTML += message.charAt(i);
             i++;
-            setTimeout(type, 50);
+            setTimeout(typeWriter, 35);
         }
     }
 
-    type();
-};
+    typeWriter();
+});
